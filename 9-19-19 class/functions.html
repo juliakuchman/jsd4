@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+
+      <h1>Functions</h1>
+
+<script>
+
+function taco() {
+  var type = "carne asada";
+  var beans = "black";
+  console.log(salsa);
+}
+
+
+add(4,2);
+subtract(4,2);
+multiply(4,2);
+divide(4,2);
+remainder(4,2);
+
+function add(x,y) {
+  // hoisting
+  var sum = x + y;
+
+  // console.log(x);
+  // console.log(y);
+  // console.log(sum);
+
+  return sum;
+}
+
+function subtract(x,y) {
+  var difference = x - y ;
+  return difference;
+}
+
+function multiply(x,y) {
+  var product = x*y;
+  return product;
+}
+
+// Refactoring
+  var multiply = function(x,y) {
+  var product = x * y ;
+  return product;
+}
+
+
+function divide(x,y) {
+  var quotient = x/y;
+  return quotient;
+}
+
+function remainder(x,y) {
+  var remainder = x%y;
+  return remainder;
+}
+
+function outerFunction() {
+  var a = 5;
+
+  var notB = innerFunction();
+
+  function innerFunction() {
+    var b = 3;
+    var c = a + b;
+    console.log("c",c);
+    return b;
+  }
+
+
+  var d = a + notB;
+  console.log("d",d);
+
+
+}
+
+
+</script>
+
+    </body>
+  </html>
