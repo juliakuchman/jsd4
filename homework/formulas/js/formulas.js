@@ -13,10 +13,9 @@ return Math.round((fahrenheit - 32) * 5/9);
 }
 
 // Celcius to Fahreneit 
-function calcCelciusToFahreneit(celcius) {
-return Math.round(celcius * (9/5) + 32)
+function calcCelciusToFarenheit(celcius) {
+return Math.round((celcius * (9/5)) + 32);
 }
-
 
 // Radius to Circumference
 function calcCircumference(radius) {
