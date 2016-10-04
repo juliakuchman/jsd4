@@ -35,16 +35,22 @@ generateStartup();
 // the "Generate New Startup" button is clicked
 
 // The Math.floor() function 
-// returns the largest integer less than or equal to a given number.
+// Returns the largest integer less than or equal to a given number.
+// I think this way might be better 
+	// function getRandomArbitrary(min, max) {
+ //    	return Math.floor(Math.random() * (max - min) + min);
+	// }
 
+	// randomX = getRandomArbitrary(0, startupX.length);
+	// randomY = getRandomArbitrary(0, startupY.length);
 
 function generateStartup() {
 
 	// TODO: generate two random index numbers, one for each array
 	// finding this random number thing a little tricky
 	// right now have these setup so the index is showing w/-1
-	var random1 = Math.round((Math.random()*startupX.length))-1;
-	var random2 = Math.round((Math.random()*startupY.length))-1;
+	var random1 = Math.floor((Math.random()*startupX.length));
+	var random2 = Math.floor((Math.random()*startupY.length));
 
 
 	// TODO: concatenate the fixed text with the two random values
@@ -66,7 +72,6 @@ function saveFavorite() {
 }
 
 
-
 // the Print Favorites function is called when
 // the "Print Favorites" button is clicked
 function printFavorites() {
@@ -78,12 +83,8 @@ function printFavorites() {
 	// - this should be stored in a variable named favoritesText
 	// - each favorite should have an html br element between it (EG: "<br>")
 	
-	// I think i need to take some of this out 
-	// var favoritesString = favorites.toString();
-	// var splitString = favoritesString.split();
-	// console.log("splitString", splitString);
-	
 	// favoritesText
+	// Does this need to be variable? 
 	var favoritesText = "";
 		for (var i = 0; i < favorites.length; i++) {
 			if (i + 1 < favorites.length) {
@@ -98,9 +99,6 @@ function printFavorites() {
 			// favoritesText.push(favorites.toString());
 			// console.log("favorites text", favoritesText);
 		};
-
-
-
 
 	// DONE: update the list element with the
 	// new list of favorites
