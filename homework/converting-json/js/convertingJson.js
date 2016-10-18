@@ -20,15 +20,17 @@ The first console.log should return the following:
 
 */
 
-var flickerItems = flickerObj["items"];
+var flickerItems = flickerObj.items;
 
-for (key in flickerItems) {
-	if (flickerItems.hasOwnProperty(key)) {
-		console.log(flickerItems[key]["title"]+ ". " + flickerItems[key]["date_taken"])
-	}
-};
+// for (key in flickerItems) {
+// 	if (flickerItems.hasOwnProperty(key)) {
+// 		console.log(flickerItems[key]["title"]+ ". " + flickerItems[key]["date_taken"])
+// 	}
+// };
 
-
+flickerItems.forEach(function(item) {
+	console.log(item.title + ". " + item.date_taken);
+}); 
 
 /*
 Part 3. Create a new array called 'links'. Iterate through the 
@@ -38,12 +40,20 @@ item in the 'links' array.
 
 var links = []
 
-for (key in flickerItems) {
-	if (flickerItems.hasOwnProperty(key)) {
-		links.push(flickerItems[key]["link"]);
-	}
-};
+// for (key in flickerItems) {
+// 	if (flickerItems.hasOwnProperty(key)) {
+// 		links.push(flickerItems[key]["link"]);
+// 	}
+// };
 
+flickerItems.forEach(function(item){
+	links.push(item.link);
+});
+
+
+// var links = flickerItems.map(function(item){
+// 	return item.link;
+// });
 
 /*
 Part 4. Convert the 'links' array into a JSON string. 

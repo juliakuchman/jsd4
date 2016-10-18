@@ -1,0 +1,77 @@
+
+<body>
+
+<h1>Lorem</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+
+<ul>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</ul>
+<li>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+<li>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+	<p>name</p>
+	<p><img src="http://www.pawderosa.com/images/puppies.jpg"></p>
+
+</body>
+
+	<div>
+		
+	</div>
+
+</html>
+
+
+<script>
+	
+	var div = document.querySelector("div")
+	div.innerHTML = "<h2> lalalal"
+
+//in future will be getting JSON data
+
+// step 1: create elements
+
+var ul = document.querySelector("ul");
+
+function createMenuItem() {
+	var li = document.createElement("li");
+	var p = document.createElement("p");
+	var img = document.createElement("img");
+
+
+	// step 2: content and attributes 
+	p.innerHTML = "Cute Puppy";
+	img.src = "http://www.pawderosa.com/images/puppies.jpg";
+
+	// step 3: append new elements to DOM
+	li.appendChild(img);
+	li.appendChild(p);
+	ul.appendChild(li);
+
+	console.log(li);
+
+	function learningJavaScript() {
+	var timeSpent = "3 months";
+	var difficult = true; 
+	}
+}
+
+// instead of creating elements
+// this uses innerHTML
+// need to have one element to put into 
+function createMenuItemTemplate() {
+
+// need line immediately below to put item into 
+var li = document.createElement("li");
+
+var template =	"<li>" +
+		"<p>Baby Otter</p>" +
+		'<img src="http://cdn.attackofthecute.com/February-01-2012-23-16-43-otterball.jpeg"/>'
+	console.log(template)
+
+li.innerHTML= template; 
+
+// li is a variable now so would not use quotes 
+ul.appendChild(li);
+
+}
+
+</script>
