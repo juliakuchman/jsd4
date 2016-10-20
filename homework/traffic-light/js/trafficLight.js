@@ -50,17 +50,21 @@ cautionButton.addEventListener("click", caution);
 */
 
 function stop() {
-	trafficLight.classList.add(".stop");
-	trafficLight.classList.remove(".slow");
-	trafficLight.classList.remove(".go");
+	trafficLight.classList.add("stop");
+	trafficLight.classList.remove("slow");
+	trafficLight.classList.remove("go");
 }
 
 function slow() {
-
+	trafficLight.classList.remove("stop");
+	trafficLight.classList.add("slow");
+	trafficLight.classList.remove("go");
 }
 
 function go() {
-
+	trafficLight.classList.remove("stop");
+	trafficLight.classList.remove("slow");
+	trafficLight.classList.add("go");
 }
 
 function caution() {
