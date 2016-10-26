@@ -1,6 +1,9 @@
 // Setup
 // ----------------------------------------------
 
+var cautionID = null;
+var runId = null;
+
 // Query DOM
 // Not sure if need to add control 
 var stopButton = document.querySelector(".control.stop-button");
@@ -11,18 +14,18 @@ var cautionButton = document.querySelector(".control.caution-button");
 var trafficLight = document.querySelector("#traffic-light");
 
 
-var stopLight = document.querySelector(".light.stop-light");
+/*var stopLight = document.querySelector(".light.stop-light");
 var slowLight = document.querySelector(".light.slow-light");
-var goLight = document.querySelector(".light.go-light");
+var goLight = document.querySelector(".light.go-light");*/
 
 
 // Structure
 // ----------------------------------------------
 
-var stopClasses = stopLight.classList; 
+/*var stopClasses = stopLight.classList; 
 var slowClasses = stopLight.classList; 
 var goGlasses = stopLight.classList; 
-
+*/
 
 // Events
 // ----------------------------------------------
@@ -68,5 +71,12 @@ function go() {
 }
 
 function caution() {
+	trafficLight.classList.remove("stop");
+	trafficLight.classList.add("slow");
+	trafficLight.classList.remove("go");
+	if (cautionID === null) {
+		
+	}
+}
 
 }

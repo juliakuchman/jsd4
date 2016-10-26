@@ -40,6 +40,7 @@ function generateSong(numberBottles) {
 	}
 }
 
+generateSong(99);
 
 
 
