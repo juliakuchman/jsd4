@@ -1,13 +1,9 @@
-console.log("hello world");
+// Setup 
+// -----------------------------------
 
-// Variable declaration
-var color; 
+// Elements
+// -----------------------------------
 
-// Variable assignment
-color = "red"
 
-// Declaration and assignment at same time
-var age = 21;
-
-// Declaration and not assigned
-var started; 
+// Events 
+// -----------------------------------

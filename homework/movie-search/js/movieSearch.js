@@ -1,82 +1,62 @@
 // Setup
 // ----------------------------------------------
 
-// form where entry and submit button go
+// Elements
 var form = document.querySelector("form");
-
-// input tag where you enter the movie 
-var movies = document.querySelector(".search");
-
-// ul where results are placed
+var searchBox = document.querySelector("form .search");
+var searchButton = document.querySelector("form button");
+var details = document.querySelector(".details");
 var results = document.querySelector(".results");
 
-var moviesTemplate = document.querySelector("#movies-template");
-
-// Structure
-// ----------------------------------------------
-
+// Templates 
+var detailsTemplate = document.querySelector("#detailsTemplate");
+var moviesTemplate = document.querySelector("#resultsTemplate");
 
 // Events
 // ----------------------------------------------
 
-form.addEventListener('submit', searchMovies)
+form.addEventListener('submit', searchMovies);
+results.addEventListener('click', getMovieDetails);
+
+// Event delegation involves adding event listener to the parent
+// That way don't have to repeat event listeners on children
 
 // Event handlers
 // ----------------------------------------------
 
-function searchMovies() {
-
-	// is this necessary (?)
+function searchMovies(event) {
+	// still don't understand why is this necessary
     event.preventDefault();
-
-	// set search value equal to what typed in    
-	var search = movies.value;
-    
+	// set search value equal to what typed in form   
+	var search = searchBox.value;
     // add movie to omdb API to search 
-    var url = "http://www.omdbapi.com/?i=" + search;
-    
-    // not sure if need i or t
-    // t is for movie title, i is for IMDb ID 
+    var url = "http://www.omdbapi.com/?s=" + search;
+    $.getJSON(url, updateMovies);
+    searchBox.value = "";
+} ; 
 
-
-    // get data from API, run updateList
-    
-    // need to fix this... 
-    $.getJSON(url, updateList);
+function getMovieDetails(event) {
+    var target = event.target.closest("LI");
+    var targetId = target.ID;
+    var url = "https://www.omdbapi.com/?i=" + targetId; 
+    $.getJSON(url, updateMovieDetails);
 }
+
 
 // Update page
 // ----------------------------------------------
 
-function updateList(json){
-	
-    console.log("update list", json);
-
+function updateMovies(json){	
+    console.log("updateMovies", json);
 	// clear list     
-    results.innerHTML = '';
-
-    // loop through to addMovies
-    // getting an error here, says json is undefined
-    json.movies.forEach(addMovies);
-    
-/*    //Handlebars
-    var fnTemplate = Handlebars.compile(moviesTemplate.innerHTML);
-    var html = fnTemplate(json);
-    results.innerHTML = html;*/
-    
+    results.innerHTML = "";
+    var templateFn = Handlebars.compile(resultsTemplate.innerHTML);
+    results.innerHTML = templateFn(json);
 }
 
-function addMovies(movies){
-    // create elements 
-    var li = document.createElement("li");
-    var img = document.createElement("img");
-    var h2 = document.createElement("h2");
-    var p = document.createElement("p");
-    
-    // set value of content
-    img.src = movies.Poster;
-    h2.textContent = movies.Title;
-    
-    results.appendChild(li)
-    li.appendChild
+function updateMovieDetails(json){
+    console.log("updateDetails", json);
+    details.innerHTML = "";
+    var templateFn = Handlebars.compile(detailsTemplate.innerHTML);
+    details.innerHTML = templateFn(json);
 }

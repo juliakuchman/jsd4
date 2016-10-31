@@ -16,118 +16,105 @@
     <h1>Movie Search</h1>
 
     <form>
-    	<input class="search" placeholder="Movie title...">
+    	<input class="search" placeholder="Enter movie title...">
     	<button type="submit">Search</button>
     </form>
 
-    <div class="details">
+
+    <div class="details"></div>
+
+
+    <ul class="results"></ul>
+
+
+<script id="resultsTemplate" type="text/x-handlebars-template">
+    
+    {{#each Search}}
+        <li id="{{imdbID}}">
+            <img src="{{Poster}}">
+            <p>{{Title}}</p>
+         </li>
+    {{/each}}
+
+</script>
+
+<script id="detailsTemplate" type="text/x-handlebars-template">
+    
         <div class="image">
-            <img class="poster" src="http://ia.media-imdb.com/images/M/MV5BZDM2YjYwYWMtMWZlNi00ZDQxLWExMDctMDAzNzQ0OTkzZjljXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
+            <img class="poster" src="{{Poster}}">
         </div>
-        <div class="text">
-            <h2 class="title">Terminator 2: Judgment Day</h2>
-            <p class="plot">A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her young son, John Connor, from a more advanced cyborg, made out of liquid metal.</p>
-            <p><a class="imdb-link" href="http://www.imdb.com/title/tt0103064">View on IMDb</a></p>
-        </div>
-    </div>
+            <div class="text">
+                <h2 class="title">{{Title}}</h2>
+                <p class="plot">{{Plot}}</p>
+                <p><a class="imdb-link" href="http://www.imdb.com/title/{{imdbID}}">View on IMDb</a></p>
+            </div>
 
-    <ul class="results">
+</script>
 
-        <!-- Sample Movie Template:
-                <li id="tt0181852">
-                    <img src="http://ia.media-imdb.com/images/M/MV5BMTk5NzM1ODgyN15BMl5BanBnXkFtZTcwMzA5MjAzMw@@._V1_SX300.jpg">
-                    <p>Terminator 3: Rise of the Machines</p>
-                </li>
-        -->
-
-        <li id="tt0088247">
-            <img src="http://ia.media-imdb.com/images/M/MV5BODE1MDczNTUxOV5BMl5BanBnXkFtZTcwMTA0NDQyNA@@._V1_SX300.jpg">
-            <p>The Terminator</p>
-        </li>
-
-        <li id="tt0103064">
-            <img src="http://ia.media-imdb.com/images/M/MV5BZDM2YjYwYWMtMWZlNi00ZDQxLWExMDctMDAzNzQ0OTkzZjljXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
-            <p>Terminator 2: Judgment Day</p>
-        </li>
-
-        <li id="tt0181852">
-            <img src="http://ia.media-imdb.com/images/M/MV5BMTk5NzM1ODgyN15BMl5BanBnXkFtZTcwMzA5MjAzMw@@._V1_SX300.jpg">
-            <p>Terminator 3: Rise of the Machines</p>
-        </li>
-
-    </ul>
 
 </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <aside class="questions">
 
     <h6>Movie Search Questions</h6>
-    <p>Before beginning to code, answer these questions as the first part of the assignment. Put your answer in the &lt;p class="answer"&gt; element after each question.</p>
-    <p>You can add the class of "hide" to this questions element after you're done answering them if you don't want it to take up space on the screen. We'll look for your answers in the HTML source.</p>
-
-
     <p class="question">1. What kind of Event on a form Element makes it so hitting the return key in a text box works?</p>
     <p class="answer">  
-
     Submit
-
     </p>
-
 
     <p class="question">2. What are two types of Events that are cancellable?</p>
     <p class="answer">     
-
-        Submit or Reset
-
+    Submit or Reset
     </p>
-
 
     <p class="question">3. When using the OMDB API's search endpoint, what is the property name for the array of movie objects? Remember, JavaScript is case sensitive.</p>
     <p class="answer">     
-
-        Search
-
+    Search
     </p>
-
 
     <p class="question">4. What is the full URL to make a request to the OMDB API's movie details endpoint for the movie Gladiator by its ID?</p>
     <p class="answer">  
-
-        http://www.omdbapi.com/?i=tt0172495
-
+    http://www.omdbapi.com/?i=tt0172495
     </p>
-
 
     <p class="question">5. What are two different techniques to set the ID attribute to "tt0319343" for an Element?</p>
     <p class="answer">   
-
-        element.id = "tt0319343";
-        element.setAttribute("id", "tt0319343""); 
-
+    element.id = "tt0319343";
+    element.setAttribute("id", "tt0319343""); 
     </p>
-
 
     <p class="question">6. When using the OMDB API's movie details endpoint, what data type is the "Genre" property?</p>
     <p class="answer">     
-
-        String
-
+    String
     </p>
-
 
     <p class="question">7. How could you convert the data in the "Genre" property into an array?</p>
     <p class="answer">     
-
-        var genre Array = ""; 
-        "var generayArray = genreString.split(',');
-
+    var genre Array = ""; 
+    "var generayArray = genreString.split(',');
     </p>
-
 
 </aside>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <script src="js/movieSearch.js"></script>
+
+<script src="js/handlebars.js"></script>
+
 </body>
 </html>
