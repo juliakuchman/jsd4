@@ -1,0 +1,23 @@
+{
+  "name": "jsd4",
+  "version": "1.0.0",
+  "description": "jsd4 packages",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliakuchman/jsd4.git"
+  },
+  "author": "juliakuchman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliakuchman/jsd4/issues"
+  },
+  "homepage": "https://github.com/juliakuchman/jsd4#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

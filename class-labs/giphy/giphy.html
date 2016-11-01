@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>Giphy</h1>
+<section class="gifs"></section>
+
+
+<!-- HANDLEBARS type tells the page that is not script-->
+ <script id="gif-template" type="text/x-handlebars-template">
+
+name of data, called data 
+{{#each data}}
+
+	<!-- Good to give id so that can tell differences between image -->
+	 <div class="gif" id="{{id}}">
+
+		<!-- .id  -->
+			<h2>{{id}}</h2>
+
+		<!-- .url  -->
+			<a href="{{url}}">url</a>
+
+		<!-- .images.original.url -->
+			<img src="{{images.original.url}}">
+
+		<!-- .rating -->
+		<!-- Can separate out the G below if you only want to update that, which is what span is for -->
+			<p>Rating: <span>{{rating}}</span></p>
+
+	</div>
+{{/each}}
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
+<script src="js/giphy.js"></script>
+
+
+</body>
+</html>
+
+
+
