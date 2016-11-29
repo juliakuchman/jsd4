@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <title>Feeder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/homework/brunch-roulette/css/reset.css">
+  <link rel="stylesheet" href="/homework/brunch-roulette/css/brunch-roulette.css">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  
+</head>
+
+
+<body>
+
+<!-- SECTION ONE -->
+<!-- ******************************************** -->
+<container class="box-one">
+  	<header>
+  		<h1>brunch roulette</h1>
+  	</header>
+
+    <section id="zipcode-search">
+      <h2>enter your zip code:</h2>
+      <form>
+    	 <input class="zip" type="text" name="name">
+      </form>
+      <div>
+      <button class="ready">i'm ready!</button>
+      <div>
+      <a href="#about">about</a>
+      </div>
+      </div>
+    </section> 
+
+  <section class="fruits">
+    <img src="images/banana.png">
+    <img src="images/watermelon.png">
+    <img src="images/strawberry.png">
+  </section>
+
+</container>
+
+<!-- SECTION TWO -->
+<!-- ******************************************** -->
+
+<container class="box-two">
+  <a id="about"></a>
+  <h2>about us</h2>
+  <div>  
+  brunch roulette helps san franciscans find the best new brunch spots. let us know the neighborhood you are looking to brunch in, and we will send you information about your next brunching spot. 
+  <div>
+  if you dont like our first idea, throw the dice and try again! 
+  </div>
+  </div>
+</container>
+
+<!-- SECTION THREE: Results Page -->
+<!-- ******************************************** -->
+
+<container class="box-three"> 
+  <ul class="brunchLocation">
+  </ul>
+
+  <script id="brunchTemplate" type="x-handlebars-template">
+    /*sometimes there are more than one neighborhood*/
+    <h1 class="neighborhood">In {{businesses.location.neighborhoods[0]}}</h1>
+    <h1 class="name">{{businesses.name}}</h1>
+    <h1 class="snippet">{{businesses.snippet_text}}</h1>
+    <h1 class="address">{{businesses.location.address}}</h1>
+    <h1 class="phone">{{businesses.phone}}</h1>
+    <img class="image" src="{{businesses.image_url}}">
+  </script>
+
+  <button class="newSpot">try again</button>
+
+</container>
+
+
+<!-- SECTION FOUR: Visa Checkout -->
+<!-- ******************************************** -->
+<!-- https://developer.visa.com/products/visa_checkout/guides-->
+<!-- <img alt="Visa Checkout" class="v-button" role="button"
+     src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"/>
+ -->
+
+<!-- LINKS TO JS -->
+<!-- ******************************************** -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="/homework/brunch-roulette/js/brunchRoulette.js"></script>
+<script type="text/javascript"
+     src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
+  </script>
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,17 @@
+/* CSS Reset */
+/* ---------------------------------- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul,
+ol {
+	list-style: none;
+}
+
+.map {
+	width: 600px;
+	height: 400px; 
+	margin: auto;
+}

@@ -1,0 +1,136 @@
+
+<!-- todo 
+-set anchor text to jump to three sections, css not working
+-
+
+Yelp Fusion - Search API 
+https://www.yelp.com/developers/documentation/v3/business_search
+
+App ID
+OJF1bB2nbTZdhFnGdC6R0Q
+
+App Secret
+rFeUwtPqFNxBFkSNJo4UMsfioZyIZdsti1tHcMJcEFP02b8v6bRkIQZ7qtcdjufL
+
+
+{
+  "access_token": "My5zqS18S1f-nEYGDGJF4GU5CbBs9Hu_m4BaGD78xtdTFhyrHxH4ZC3EQZrSjLU1gSDlKuPiPe7xfc6pFMBF_pGs0FJSIm7fCICoM4l3R1EnEbxf7U7NojYIGekjWHYx",
+  "token_type": "Bearer",
+  "expires_in": 15551999
+}
+-->
+
+<!doctype html>
+<html>
+
+<head>
+  <title>Feeder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/brunch-roulette.css">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  
+<!--   <script type="text/javascript">
+    function onVisaCheckoutReady(){
+    V.init( {
+      apikey: "7O07VN664O10JW6A9ESS113p8sf9JeGzr6_2haC9F9m_ANtLM",
+        paymentRequest:{
+        currencyCode: "USD",
+        total: "10.00"
+        }
+      });
+    }
+   </script> -->
+
+</head>
+
+
+<body>
+
+<!-- SECTION ONE -->
+<!-- ******************************************** -->
+<container class="box-one">
+  	<header>
+  		<h1>brunch roulette</h1>
+  	</header>
+
+    <section id="zipcode-search">
+      <h2>enter your zip code:</h2>
+      <form>
+    	 <input class="zip" type="text" name="name">
+      </form>
+      <div>
+      <button class="ready">i'm ready!</button>
+      <div>
+      <a href="#about">about</a>
+      </div>
+      </div>
+    </section> 
+
+  <section class="fruits">
+    <img src="images/banana.png">
+    <img src="images/watermelon.png">
+    <img src="images/strawberry.png">
+  </section>
+
+</container>
+
+<!-- SECTION TWO -->
+<!-- ******************************************** -->
+
+<container class="box-two">
+  <a id="about"></a>
+  <h2>about us</h2>
+  <div>  
+  brunch roulette helps san franciscans find the best new brunch spots. let us know the neighborhood you are looking to brunch in, and we will send you information about your next brunching spot. 
+  <div>
+  if you dont like our first idea, throw the dice and try again! 
+  </div>
+  </div>
+</container>
+
+<!-- SECTION THREE: Results Page -->
+<!-- ******************************************** -->
+
+<container class="box-three"> 
+  <ul class="brunchLocation">
+  </ul>
+
+  <script id="brunchTemplate" type="x-handlebars-template">
+    /*sometimes there are more than one neighborhood*/
+    <h1 class="neighborhood">In {{businesses.location.neighborhoods[0]}}</h1>
+    <h1 class="name">{{businesses.name}}</h1>
+    <h1 class="snippet">{{businesses.snippet_text}}</h1>
+    <h1 class="address">{{businesses.location.address}}</h1>
+    <h1 class="phone">{{businesses.phone}}</h1>
+    <img class="image" src="{{businesses.image_url}}">
+  </script>
+
+  <button class="newSpot">try again</button>
+
+</container>
+
+
+<!-- SECTION FOUR: Visa Checkout -->
+<!-- ******************************************** -->
+<!-- https://developer.visa.com/products/visa_checkout/guides-->
+<!-- <img alt="Visa Checkout" class="v-button" role="button"
+     src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"/>
+ -->
+
+<!-- LINKS TO JS -->
+<!-- ******************************************** -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/brunchRoulette.js"></script>
+<script type="text/javascript"
+     src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
+  </script>
+</script>
+
+</body>
+</html>
+
+
