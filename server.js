@@ -10,7 +10,6 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 
-
 // YELP SETUP
 var client;
 
@@ -37,13 +36,7 @@ request({
             params: [{
                 name: 'grant_type',
                 value: 'client_credentials'
-            },/*{
-                name: 'client_id',
-                value: 'OJF1bB2nbTZdhFnGdC6R0Q'
-            },{
-                name: 'client_secret',
-                value: 'rFeUwtPqFNxBFkSNJo4UMsfioZyIZdsti1tHcMJcEFP02b8v6bRkIQZ7qtcdjufL'
-            }*/]
+            },]
         }
     }
 }, function(error, response, body) {
@@ -73,7 +66,6 @@ router.get('/brunch-roulette', function(req, res) {
 });
 
 router.get('/search', function(req, res) {
-
 	client.search({
 	    term: 'brunch',
 	    location: 'San Francisco',
@@ -91,9 +83,4 @@ app.use("/", router);
 app.listen(app.get("port"), function() {
 	console.log("hello")
 });
-
-
-
-
-
 

@@ -38,9 +38,9 @@
     </section> 
 
   <section class="fruits">
-    <img src="images/banana.png">
-    <img src="images/watermelon.png">
-    <img src="images/strawberry.png">
+    <img src="/homework/brunch-roulette/images/banana.png">
+    <img src="/homework/brunch-roulette/images/watermelon.png">
+    <img src="/homework/brunch-roulette/images/strawberry.png">
   </section>
 
 </container>
@@ -54,10 +54,11 @@
   <div>  
   brunch roulette helps san franciscans find the best new brunch spots. let us know the neighborhood you are looking to brunch in, and we will send you information about your next brunching spot. 
   <div>
-  if you dont like our first idea, throw the dice and try again! 
+  if you dont like our first idea, try again!
   </div>
   </div>
 </container>
+
 
 <!-- SECTION THREE: Results Page -->
 <!-- ******************************************** -->
@@ -66,27 +67,22 @@
   <ul class="brunchLocation">
   </ul>
 
+{{#each yelpData}}
   <script id="brunchTemplate" type="x-handlebars-template">
-    /*sometimes there are more than one neighborhood*/
-    <h1 class="neighborhood">In {{businesses.location.neighborhoods[0]}}</h1>
+    
     <h1 class="name">{{businesses.name}}</h1>
     <h1 class="snippet">{{businesses.snippet_text}}</h1>
     <h1 class="address">{{businesses.location.address}}</h1>
     <h1 class="phone">{{businesses.phone}}</h1>
     <img class="image" src="{{businesses.image_url}}">
+
+{{/#each}}
   </script>
 
+  
   <button class="newSpot">try again</button>
 
 </container>
-
-
-<!-- SECTION FOUR: Visa Checkout -->
-<!-- ******************************************** -->
-<!-- https://developer.visa.com/products/visa_checkout/guides-->
-<!-- <img alt="Visa Checkout" class="v-button" role="button"
-     src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"/>
- -->
 
 <!-- LINKS TO JS -->
 <!-- ******************************************** -->
@@ -99,5 +95,3 @@
 
 </body>
 </html>
-
-

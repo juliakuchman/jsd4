@@ -10,7 +10,6 @@ sfZips = [94129, 94123, 94109, 94133, 94111, 94108, 94105, 94102, 94103, 94107, 
 	// hoisting
 var html = ""
 
-}
 
 // EVENTS
 // ---------------------------------------------------
@@ -38,7 +37,20 @@ function selectRandomBrunch(json) {
 	
 	// May need to generate a random number so that same rest
 	// not pulled each time for each zipcode
-}
+};
+
+
+// To get data
+// ---------------------------------------------------
+
+$.getJSON("/search").then(function(data){
+	
+	console.log(data.businesses[0]);
+	var yelpData = data.businesses;
+	var name = data.businesses.name
+
+});
+
 
 
 // UPDATE PAGE 
