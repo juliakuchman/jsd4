@@ -43,6 +43,7 @@ function getMovieDetails(event) {
 }
 
 
+
 // Update page
 // ----------------------------------------------
 

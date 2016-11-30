@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>Feeder</title>
+  <title>Brunch Roulette</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,9 +31,7 @@
       </form>
       <div>
       <button class="ready">i'm ready!</button>
-      <div>
-      <a href="#about">about</a>
-      </div>
+
       </div>
     </section> 
 
@@ -42,56 +40,65 @@
     <img src="/homework/brunch-roulette/images/watermelon.png">
     <img src="/homework/brunch-roulette/images/strawberry.png">
   </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 </container>
 
-<!-- SECTION TWO -->
+<!-- SECTION TWO: Results Page -->
 <!-- ******************************************** -->
 
 <container class="box-two">
-  <a id="about"></a>
-  <h2>about us</h2>
-  <div>  
-  brunch roulette helps san franciscans find the best new brunch spots. let us know the neighborhood you are looking to brunch in, and we will send you information about your next brunching spot. 
-  <div>
-  if you dont like our first idea, try again!
-  </div>
-  </div>
-</container>
+  <h2>your brunch spot:</h2>
+  <ul class="results"></ul>
+<!-- Handlebars -->
+    <script id="brunchTemplate" type="text/x-handlebars-template">
 
+      {{#each businesses}}
+        <li>
+          <h3>{{name}}</h3>
+          <br>
+          <img id="finalImage" src="{{image_url}}">
+          <br>
+          <h3>{{location.address1}}</h3>
+          <br>
+          <h3>{{location.zip_code}}</h3>
+          <br>
+          <h3><a href="{{url}}">Yelp Page</a></h3>
+          <br>
+          <br>
+          <br>         
+        </li>
+      {{/each}}
 
-<!-- SECTION THREE: Results Page -->
-<!-- ******************************************** -->
+    </script>
+<br>
+<br>
+    <div>  
+      if you dont like our first idea, try again!
+    </div>
 
-<container class="box-three"> 
-  <ul class="brunchLocation">
-  </ul>
-
-{{#each yelpData}}
-  <script id="brunchTemplate" type="x-handlebars-template">
-    
-    <h1 class="name">{{businesses.name}}</h1>
-    <h1 class="snippet">{{businesses.snippet_text}}</h1>
-    <h1 class="address">{{businesses.location.address}}</h1>
-    <h1 class="phone">{{businesses.phone}}</h1>
-    <img class="image" src="{{businesses.image_url}}">
-
-{{/#each}}
-  </script>
-
-  
   <button class="newSpot">try again</button>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </container>
 
 <!-- LINKS TO JS -->
 <!-- ******************************************** -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/homework/brunch-roulette/js/brunchRoulette.js"></script>
-<script type="text/javascript"
-     src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
-  </script>
-</script>
+<script src="/homework/brunch-roulette/js/handlebars.js"></script>
 
 </body>
 </html>

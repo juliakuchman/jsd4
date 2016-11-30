@@ -3,6 +3,12 @@ img {
 	max-width: 150px;
 }
 
+#finalImage {
+	max-width: 400px;
+	max-height: 400px;
+	border-radius: 50%;
+}
+
 header{
 	margin-top: 30px;
 	margin-bottom: 30px;
@@ -33,20 +39,20 @@ body {
 a {
 	text-decoration: none;
 	font-weight: bold;
-	color:  #ccc;
+	color: pink;
 	outline: none;
 	}
 
 a:visited {
-	color:  #ccc;
+	color: pink;
 	}
 
 a:active {
-	color:  #ccc;
+	color: pink;
 	}
 
 a:hover {
-	color: #ccc;
+	color: pink;
 	text-decoration: underline;
 	}
 
@@ -87,7 +93,7 @@ h2 {
 	}
 
 h3 {
-	font-size: 16px;
+	font-size: 30px;
 	line-height: 22px;
 	font-weight: bold;
 	margin-top: 0;

@@ -9,7 +9,10 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-
+// GETTING ZIP SUBMITTED
+/*	// need to do preZip.value to get text
+var preZip = document.querySelector("form .zip");
+*/
 // YELP SETUP
 var client;
 
@@ -36,7 +39,13 @@ request({
             params: [{
                 name: 'grant_type',
                 value: 'client_credentials'
-            },]
+            },{
+                name: 'client_id',
+                value: 'OJF1bB2nbTZdhFnGdC6R0Q'
+            },{
+                name: 'client_secret',
+                value: 'rFeUwtPqFNxBFkSNJo4UMsfioZyIZdsti1tHcMJcEFP02b8v6bRkIQZ7qtcdjufL'
+            }]
         }
     }
 }, function(error, response, body) {
@@ -67,8 +76,10 @@ router.get('/brunch-roulette', function(req, res) {
 
 router.get('/search', function(req, res) {
 	client.search({
-	    term: 'brunch',
-	    location: 'San Francisco',
+	    categories: 'breakfast',
+	    location: '94109',
+	    // API says only able to return 50
+	    sort_by: 'distance',
 	}).then(function(data) {
 		res.send(data)
 	})
